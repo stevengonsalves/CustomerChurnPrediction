@@ -56,14 +56,18 @@ def predict():
                 "reason": f"It is no churn because of the following factors: {reason}"
             })
 
-    # Generate a visualization
+    # Add churn predictions to data for visualization
     data['Churn Prediction'] = ['Churn' if pred == 1 else 'No Churn' for pred in predictions]
-    churn_counts = data['Churn Prediction'].value_counts()
-    fig, ax = plt.subplots()
+
+    # Create a bar graph with percentages
+    churn_counts = data['Churn Prediction'].value_counts(normalize=True) * 100
+    fig, ax = plt.subplots(figsize=(8, 5))
     churn_counts.plot(kind='bar', color=['blue', 'red'], ax=ax)
-    plt.title('Churn Predictions')
-    plt.ylabel('Count')
-    plt.xlabel('Prediction')
+    ax.set_title('Churn Predictions (Percentage)')
+    ax.set_ylabel('Percentage')
+    ax.set_xlabel('Prediction')
+    for i, v in enumerate(churn_counts):
+        ax.text(i, v + 1, f"{v:.2f}%", ha='center', fontsize=12)
 
     # Convert plot to image
     buf = io.BytesIO()
@@ -76,6 +80,7 @@ def predict():
         'results': results,
         'graph': f"data:image/png;base64,{graph}"
     })
+
 
 
 if __name__ == '__main__':

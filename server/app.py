@@ -13,8 +13,8 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 # Load model and columns
-model = pickle.load(open('model/churn_model.pkl', 'rb'))
-columns = json.load(open('model/columns.json'))
+model = pickle.load(open('E:\CustomerChurnPrediction\server\model\churn_model.pkl', 'rb'))
+columns = json.load(open('E:\CustomerChurnPrediction\server\model\columns.json'))
 
 @app.route('/predict', methods=['POST'])
 def predict():

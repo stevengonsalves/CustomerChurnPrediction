@@ -1,5 +1,6 @@
-const resultDiv = document.getElementById('report'); // Use "report" for the results section
-const graphImg = document.getElementById('graph'); // Use "graph" for the graph
+const resultDiv = document.getElementById('report');
+const barGraphImg = document.getElementById('graph'); // Bar graph
+const lineGraphImg = document.getElementById('lineGraph'); // Line graph
 
 document.getElementById('uploadForm').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -41,9 +42,13 @@ document.getElementById('uploadForm').addEventListener('submit', async (e) => {
             resultDiv.appendChild(reason);
         });
 
-        // Display graph
-        graphImg.src = result.graph;
-        graphImg.style.display = 'block';
+        // Display bar graph
+        barGraphImg.src = result.bar_graph;
+        barGraphImg.style.display = 'block';
+
+        // Display line graph
+        lineGraphImg.src = result.line_graph;
+        lineGraphImg.style.display = 'block';
     } else {
         const error = await response.json();
         alert(`Error: ${error.error}`);

@@ -4,25 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Churn Prediction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Customer Churn Prediction</h1>
+    <p class="description">Predict whether your customers will stay or leave based on uploaded data.</p>
+
     <form id="uploadForm" enctype="multipart/form-data">
         <label for="file">Upload CSV File:</label>
         <input type="file" id="file" name="file" accept=".csv">
         <button type="submit">Predict</button>
     </form>
+
     <div id="output">
         <h2>Results</h2>
         <!-- Div for displaying the report -->
-        <div id="report"></div>
-    
-        <!-- Placeholder for graph -->
-        <img id="graph" src="" alt="Prediction Graph" style="display:none;">
+        <div id="report">No data available yet.</div>
+
+        <div id="graph-container">
+            <img id="graph" src="" alt="Bar Graph" style="display:none;">
+            <img id="lineGraph" src="" alt="Line Graph" style="display:none;">
+        </div>
+        
+
     </div>
-    
+
     <script src="script.js"></script>
-    </body>
-    </html>
-    
+</body>
+</html>

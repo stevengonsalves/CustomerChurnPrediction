@@ -1,5 +1,5 @@
 SeniorCitizen,tenure,MonthlyCharges,TotalCharges,gender_Male,Partner_Yes,Dependents_Yes,PhoneService_Yes,MultipleLines_No phone service,MultipleLines_Yes,InternetService_Fiber optic,InternetService_No,OnlineSecurity_No internet service,OnlineSecurity_Yes,OnlineBackup_No internet service,OnlineBackup_Yes,DeviceProtection_No internet service,DeviceProtection_Yes,TechSupport_No internet service,TechSupport_Yes,StreamingTV_No internet service,StreamingTV_Yes,StreamingMovies_No internet service,StreamingMovies_Yes,Contract_One year,Contract_Two year,PaperlessBilling_Yes,PaymentMethod_Credit card (automatic),PaymentMethod_Electronic check,PaymentMethod_Mailed check,CustomerLoyaltyScore,PredictedChurn
-0,24,50,1200,0,1,1,1,0,0,0,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,1,0,0,47.05882352941176,0
-0,36,40,1440,1,1,0,1,0,1,1,0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,87.8048780487805,0
-1,48,60,2880,1,0,0,1,0,0,1,0,0,1,0,1,0,1,0,1,0,1,0,1,1,0,1,0,1,0,78.68852459016394,0
-1,4,85,340,1,0,0,1,0,1,1,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,1,0,1,0,4.651162790697675,1
+0,24,50,1200,0,1,1,1,0,0,0,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,1,0,0,47.05882353,0
+0,36,40,1440,1,1,0,1,0,1,1,0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,87.80487805,0
+1,48,60,2880,1,0,0,1,0,0,1,0,0,1,0,1,0,1,0,1,0,1,0,1,1,0,1,0,1,0,78.68852459,0
+1,4,85,340,1,0,0,1,0,1,1,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,1,0,1,0,4.651162791,1

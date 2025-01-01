@@ -8,14 +8,12 @@ import matplotlib.pyplot as plt
 import io
 import base64
 
-
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 # Load model and columns
 model = pickle.load(open('model/churn_model.pkl', 'rb'))
 columns = json.load(open('model/columns.json'))
-
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -62,14 +60,19 @@ def predict():
 
     # Create a bar graph with percentages
     churn_counts = data['Churn Prediction'].value_counts(normalize=True) * 100
-    colors = ['red' if label == 'Churn' else 'blue' for label in churn_counts.index]
+    churn_labels = ['No Churn', 'Churn']  # Correct labels for X-axis
+
+    # Ensure both labels are present
+    churn_counts_full = [churn_counts.get(label, 0) for label in churn_labels]
+
+    colors = ['blue', 'red']  # Match colors with the labels
 
     fig, ax = plt.subplots(figsize=(8, 5))
-    churn_counts.plot(kind='bar', color=colors, ax=ax)
+    ax.bar(churn_labels, churn_counts_full, color=colors)
     ax.set_title('Churn Predictions (Percentage)')
     ax.set_ylabel('Percentage')
     ax.set_xlabel('Prediction')
-    for i, v in enumerate(churn_counts):
+    for i, v in enumerate(churn_counts_full):
         ax.text(i, v + 1, f"{v:.2f}%", ha='center', fontsize=12)
 
     # Convert bar plot to image
@@ -99,8 +102,6 @@ def predict():
         'bar_graph': f"data:image/png;base64,{bar_graph}",
         'line_graph': f"data:image/png;base64,{line_graph}"
     })
-
-
 
 if __name__ == '__main__':
     app.run(debug=True)
